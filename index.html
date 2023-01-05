@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
   </head>
+  
   <body>
     <h2>Slider to controld TD</h2>
     <input type="range" class="controllTD">
@@ -16,11 +17,29 @@
     <input type="range" class="controlledByTD">
     
     <h2>User Data Form</h2>
-    <form>
+   <h2>User Data Form</h2>
+
+    <form id="form">
     Name: <input type="text" name="name"><br>
     Email: <input type="text" name="email"><br>
     <input type="submit" class="submit">
     </form> 
+
+    <script>
+    const form = document.getElementById("form");
+    const socket = new WebSocket("ws://test-server-app.herokuapp.com:443");
+
+    form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = form.elements.name.value;
+    const email = form.elements.email.value;
+    const data = { name, email };
+
+    socket.send(JSON.stringify(data));
+  });
+</script>
+
 
   </body>
 </html>
