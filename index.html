@@ -25,21 +25,5 @@
     <input type="submit" class="submit">
     </form> 
 
-    <script>
-    const form = document.getElementById("form");
-    const socket = new WebSocket("ws://test-server-app.herokuapp.com:443");
-
-    form.addEventListener("submit", event => {
-    event.preventDefault();
-
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-    const data = { name, email };
-
-    socket.send(JSON.stringify(data));
-  });
-</script>
-
-
   </body>
 </html>
