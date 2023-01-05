@@ -5,11 +5,6 @@ controllTD.addEventListener('input', (event) => {
   ws.send(JSON.stringify({ 'slider1': controllTD.value / 100 }));
 }, false);
 
-let submit = document.querySelector('.submit') ;
-submit.addEventListener('input', (event) => {
-  ws.send(JSON.stringify({ 'name': 'name', 'email': 'email' }));
-}, false);
-
 let controlledByTD = document.querySelector('.controlledByTD');
 
 ws.addEventListener('open', (event) => {
