@@ -7,6 +7,14 @@ controllTD.addEventListener('input', (event) => {
 
 let controlledByTD = document.querySelector('.controlledByTD');
 
+let form = document.getElementById("form");
+form.addEventListener("submit", event => {event.preventDefault();
+    const name = form.elements.name.value;
+    const email = form.elements.email.value;
+    const data = { name, email };
+    ws.send(JSON.stringify(data));
+  });
+
 ws.addEventListener('open', (event) => {
   console.log('Socket connection open');
   // alert('Successfully connected to socket server 🎉');
