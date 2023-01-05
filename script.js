@@ -6,7 +6,7 @@ controllTD.addEventListener('input', (event) => {
 }, false);
 
 let submit = document.querySelector('.Submit') ;
-controllTD.addEventListener('input', (event) => {
+submit.addEventListener('input', (event) => {
   ws.send(JSON.stringify({ 'name': name.value, 'email': email.value }));
 }, false);
 
