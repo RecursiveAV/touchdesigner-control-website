@@ -11,7 +11,8 @@ let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
-    const data = { name, email };
+    const tick = form.elements.tick.value;
+    const data = { name, email, tick };
     ws.send(JSON.stringify(data));
   });
 
@@ -48,4 +49,3 @@ ws.addEventListener('close', (event) => {
     console.log('Socket connection closed');
     alert('closing socket server');
 });
-
