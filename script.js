@@ -1,11 +1,5 @@
 let ws = new WebSocket('wss://test-server-app.herokuapp.com');
 
-window.onload = function () {
-  ws.onopen = function () {
-    ws.send("Page Loaded");
-          };
-        };
-
 let controllTD = document.querySelector('.controllTD') ;
 controllTD.addEventListener('input', (event) => {
   ws.send(JSON.stringify({ 'slider1': controllTD.value / 100 }));
