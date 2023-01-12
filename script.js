@@ -15,7 +15,7 @@ controllTD.addEventListener('input', (event) => {
 let controlledByTD = document.querySelector('.controlledByTD');
 
 let form = document.getElementById("form");
-form.addEventListener("Submit", event => {event.preventDefault();
+form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
     const marketing = form.elements.marketing.value;
