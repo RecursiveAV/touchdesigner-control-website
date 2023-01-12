@@ -6,14 +6,6 @@ window.onload = function () {
   };
 };
 
-
-let controllTD = document.querySelector('.controllTD') ;
-controllTD.addEventListener('input', (event) => {
-  ws.send(JSON.stringify({ 'slider1': controllTD.value / 100 }));
-}, false);
-
-let controlledByTD = document.querySelector('.controlledByTD');
-
 let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
