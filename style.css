@@ -9,15 +9,6 @@
     --font-family-header: "HK Grotesk";
   }
   
-  
-  /* Basic page style resets */
-  * {
-    box-sizing: border-box;
-  }
-  [hidden] {
-    display: none !important;
-  }
-  
   /* Import fonts */
   @font-face {
     font-family: HK Grotesk;
