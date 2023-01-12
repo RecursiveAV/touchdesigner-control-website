@@ -13,7 +13,7 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-document.getElementById("tick").addEventListener("change", function(){
+document.getElementById("sendData").addEventListener("change", function(){
    var tick = this.checked ? "yes" : "no";
 });
 
