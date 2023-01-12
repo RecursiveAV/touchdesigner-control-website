@@ -18,8 +18,8 @@ let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
-    const marketing = form.elements.marketing.value;
-    const data = { name, email, marketing };
+    const tick = form.elements.tick.value;
+    const data = { name, email, tick };
     ws.send(JSON.stringify(data));
   });
 
