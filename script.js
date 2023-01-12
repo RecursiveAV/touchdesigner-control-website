@@ -6,12 +6,23 @@ window.onload = function () {
   };
 };
 
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+var uuid = getUrlParameter('UUID');
+document.getElementById("UUIDinput").value = uuid;
+
 let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
     const tick = form.elements.tick.value;
-    const data = { name, email, tick };
+    const uuid = form.elements.uuid.value;                                 
+    const data = { name, email, tick, uuid };
     ws.send(JSON.stringify(data));
   });
 
