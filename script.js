@@ -14,7 +14,7 @@ function getUrlParameter(name) {
 };
 
 document.getElementById("sendData").addEventListener("change", function(){
-   var tick = this.checked ? "yes" : "no";
+   var marketing = this.checked ? "yes" : "no";
 });
 
 var uuid = getUrlParameter('UUID');
@@ -24,7 +24,7 @@ let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
-   
+    const tick = marketing;
     const uuid = form.elements.UUIDinput.value;
     const data = { name, email, tick, uuid };
     ws.send(JSON.stringify(data));
