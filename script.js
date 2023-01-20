@@ -14,7 +14,7 @@ function getUrlParameter(name) {
 };
 
 document.getElementById("sendData").addEventListener("change", function(){
-   var marketing = this.checked ? "yes" : "no";
+   var tick = this.checked ? "yes" : "no";
 });
 
 var uuid = getUrlParameter('UUID');
