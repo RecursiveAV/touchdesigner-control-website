@@ -24,7 +24,7 @@ let form = document.getElementById("form");
 form.addEventListener("submit", event => {event.preventDefault();
     const name = form.elements.name.value;
     const email = form.elements.email.value;
-  
+    const tick = form.elements.tick.value;  
     const uuid = form.elements.UUIDinput.value;
     const data = { name, email, tick, uuid };
     ws.send(JSON.stringify(data));
