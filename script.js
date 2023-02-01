@@ -15,7 +15,7 @@ function getUrlParameter(name) {
 
 const marktick = document.getElementById('sendData');
 var ticked = "off";
-marktick.addEventListener('change', (event) => {
+marktick.addEventListener('change', () => {
   if (event.currentTarget.checked){
    ticked = "on";
   } else {
