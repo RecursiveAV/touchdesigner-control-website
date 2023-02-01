@@ -20,6 +20,7 @@ marktick.addEventListener('change', (event) => {
    ticked = "on";
   } else {
    ticked = "off";
+  }
   });
 
 var uuid = getUrlParameter('UUID');
