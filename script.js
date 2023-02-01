@@ -13,14 +13,14 @@ function getUrlParameter(name) {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
-const marktick = document.getElementById('sendData')
-var ticked = "off"
+const marktick = document.getElementById('sendData');
+var ticked = "off";
 marktick.addEventListener('change', (event) => {
   if (event.currentTarget.checked){
    ticked = "on"
   } else {
    ticked = "off"
-  })
+  });
 
 var uuid = getUrlParameter('UUID');
 document.getElementById("UUIDinput").value = uuid;
