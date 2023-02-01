@@ -17,9 +17,9 @@ const marktick = document.getElementById('sendData');
 var ticked = "off";
 marktick.addEventListener('change', (event) => {
   if (event.currentTarget.checked){
-   ticked = "on"
+   ticked = "on";
   } else {
-   ticked = "off"
+   ticked = "off";
   });
 
 var uuid = getUrlParameter('UUID');
