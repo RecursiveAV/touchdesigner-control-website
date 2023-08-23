@@ -10,25 +10,65 @@
   </head>
   
   <body>
-    <img class="bg" src="KioskBackground.jpg" alt="Full Page Background Image">
-   
-    <div class="form-container">
-    <form id="form">
-    <h2>User Data Form</h2> <br>
-    <label for="UUIDinput">UUID:</label>
-    <input type="text" id="UUIDinput" name="UUIDinput"><br>
-    <br>  
-    <label for="name">Name:</label>  
-    <input type="text" name="name"><br>
-    <br>
-    <label for="email">Email:</label>  
-    <input type="email" name="email"><br>
-    <br>
-    <label for="marketing">Opt in for marketing:</label>  
-    <input type="checkbox" id='sendData' name="tick"><br>
-    <br>
-    <input type="submit" class="submit">
-    </form>
+    <section class="section1">
+        <div class="container">
+            <img class="bg" src="background.jpg" alt="Full Page Background Image">
+            <!-- <div class="logo-container">
+                <img src="puma_logo.jpg" alt="Small Logo" class="small-logo">
+            </div> -->
+            <header class="header">
+                <h3>WANT TO SEE YOURSELF IN ACTION?</h3>
+                <h3>FILL OUT THE FORM BELOW</h3>
+            </header>
+        
+            <div class="form-container">
+                <form id="form">
+                <label for="UUIDinput">UUID:</label>
+                <input type="text" id="UUIDinput" name="UUIDinput" class = UUID-input-box>
     
-  </body>
+                <div class="form-name-email">
+                    <input type="text" placeholder="Name*" name="name" class="input-box">
+    
+                    <input type="email" placeholder="Email*" name="email" class="input-box">
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id='sendData' name="tick" class="checkbox">
+                    <label for="marketing">Yes, I want to learn about the latest special offers, product drops, and more, through personalised ads on
+                        digital media plateforms like Google and Facebook by using my email address. See our Privacy Policy
+                    </label>
+                </div>
+                <input type="submit" class="action-button" value="SEE MY ACTION SHOTS">
+                </form>
+            </div>
+            <!-- <div class="second-logo-container">
+                <img src="puma_arcade_logo.jpg" alt="Small Logo" class="second-logo">
+            </div> -->
+        </div>   
+    </section> 
+    <section class="section2">
+        <footer class="footer">
+            <h3>About</h3>
+            <div class="footer-left">
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Corporate News</a></li>
+                    <li><a href="#">Press Center</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">PUMA App</a></li>
+                    <li><a href="#">Modern Slavery Act</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Student Discount</a></li>
+                    <li><a href="#">UK Tax Strategy</a></li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+  </body> 
+
 </html>
