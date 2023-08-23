@@ -35,14 +35,118 @@
     background-image: url('background-image.jpg');
     background-size: cover;
     background-position: center;
+    z-index: -1;
    }
+   
+/* .logo-container {
+    text-align: center;
+    margin-top: 20px;
+}
 
-  .form-container {
+.second-logo-container {
+    text-align: center;
+    margin-top: 80%;
+}
+
+.small-logo, .second-logo {
+    width: 60px;
+    height: 60px;
+} */
+
+.header {
+    transform: translate(0, 140%);
+    text-align: center;
+    color: white;
+}
+
+.form-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 50px;
     border-radius: 10px;
+    color: white;
+    align-items: center;
+    justify-content: center;
    }
+
+.form-name-email {
+    padding-top: 20px;
+   }
+
+.input-box {
+    width: 400px;
+    padding: 10px;
+    margin: 5px, 0;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(66, 66, 66);
+    margin-top: 20px;
+}
+
+.UUID-input-box {
+    width: 400px;
+    padding: 10px;
+    margin: 5px, 0;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(84, 68, 92);
+}
+
+.checkbox-container {
+    display: flex;
+    font-size: 9.5px;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.checkbox {
+    margin-right: 5px;
+}
+
+.action-button {
+    display: flex;
+    width: 45%;
+    padding: 10px;
+    background-color: rgb(255, 0, 204);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 40px;
+    margin-left: 25%
+}
+
+.footer {
+    transform: translate(0, 170%);
+    display: flex;
+    text-align: left;
+    color: rgb(203, 203, 203);
+    padding: 20px;
+    background-color: rgb(30, 30, 30);
+  }
+  
+.footer h3 {
+    color: white;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+.footer ul {
+    list-style: none;
+    margin-top: 25%;
+    transform: translate(-53%);
+  }
+
+.footer li {
+    padding: 3px;
+    margin-bottom: 8px;
+  }
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+
