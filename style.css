@@ -24,6 +24,7 @@
   
   body {
   margin: 0;
+  font-size: 16;
   }
 
   .bg {
@@ -32,37 +33,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('KioskBackground.jpg');
+    background-image: url('background-image.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
    }
-   
-/* .logo-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.second-logo-container {
-    text-align: center;
-    margin-top: 80%;
-}
-
-.small-logo, .second-logo {
-    width: 60px;
-    height: 60px;
-} */
 
 .header {
-    transform: translate(0, 140%);
+    transform: translate(0, 100px);
+    flex-shrink: 0;
     text-align: center;
     color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .form-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; 
+    left: 55%; 
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0);
     padding: 50px;
@@ -70,10 +61,6 @@
     color: white;
     align-items: center;
     justify-content: center;
-   }
-
-.form-name-email {
-    padding-top: 20px;
    }
 
 .input-box {
@@ -109,44 +96,24 @@
     display: flex;
     width: 45%;
     padding: 10px;
-    background-color: rgb(255, 0, 204);
+    background-color: rgb(230, 0, 184);
     color: white;
     border: none;
-    cursor: pointer;
     font-size: 14px;
     margin-top: 40px;
     margin-left: 25%
 }
 
-.footer {
-    transform: translate(0, 170%);
+.action-button-small {
     display: flex;
-    text-align: left;
-    color: rgb(203, 203, 203);
-    padding: 20px;
-    background-color: rgb(30, 30, 30);
-  }
-  
-.footer h3 {
+    width: 130px;
+    padding: 10px;
+    background-color: rgb(139, 109, 154);
     color: white;
-    margin: 0;
-    margin-bottom: 20px;
-  }
-
-.footer ul {
-    list-style: none;
-    margin-top: 25%;
-    transform: translate(-53%);
-  }
-
-.footer li {
-    padding: 3px;
-    margin-bottom: 8px;
-  }
-
-.footer a {
-    color: inherit;
-    text-decoration: none;
-  }
+    border: none;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 29%
+}
 
 
