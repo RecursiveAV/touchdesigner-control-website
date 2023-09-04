@@ -48,13 +48,14 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    padding: 50px;
 }
 
 .form-container {
     position: absolute;
-    top: 50%; 
-    left: 55%; 
-    transform: translate(-50%, -50%);
+    top: 46%; 
+    left: 40%; 
+    transform: translate(-55%, -40%);
     background-color: rgba(255, 255, 255, 0);
     padding: 50px;
     border-radius: 10px;
@@ -64,20 +65,20 @@
    }
 
 .input-box {
-    width: 400px;
+    width: 150%;
     padding: 10px;
     margin: 5px, 0;
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(66, 66, 66);
     margin-top: 20px;
+    
 }
 
 .UUID-input-box {
-    width: 400px;
-    padding: 10px;
-    margin: 5px, 0;
-    border: 1px solid rgb(255, 255, 255);
-    background-color: rgb(84, 68, 92);
+    width: 0;
+    padding: 0;
+    margin: 0, 0;
+    border: 0 solid rgb(255, 255, 255);
 }
 
 .checkbox-container {
@@ -86,6 +87,7 @@
     color: rgb(255, 255, 255);
     margin-top: 10px;
     text-decoration: underline;
+    width: 150%;
 }
 
 .checkbox {
@@ -94,26 +96,27 @@
 
 .action-button {
     display: flex;
-    width: 45%;
+    width: 100%;
     padding: 10px;
     background-color: rgb(230, 0, 184);
     color: white;
     border: none;
     font-size: 14px;
     margin-top: 40px;
-    margin-left: 25%
+    margin-left: 25%;
+    border-radius: 4px;
 }
 
 .action-button-small {
     display: flex;
-    width: 130px;
+    width: 73%;
     padding: 10px;
     background-color: rgb(139, 109, 154);
     color: white;
     border: none;
     font-size: 14px;
-    margin-top: 5px;
-    margin-left: 29%
+    margin-top: 10px;
+    margin-left: 33%;
+    border-radius: 4px;
 }
-
 
