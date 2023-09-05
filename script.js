@@ -2,39 +2,51 @@ let ws = new WebSocket('wss://test-server-app.herokuapp.com');
 
 window.onload = function () {
   ws.onopen = function () {
-    ws.send(JSON.stringify({ 'page loaded': 1}));
+    ws.send(JSON.stringify({ 'page loaded': 1 }));
   };
 };
 
 function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 };
 
 const marktick = document.getElementById('sendData');
 var ticked = "off";
 marktick.addEventListener('change', () => {
-  if (event.currentTarget.checked){
-   ticked = "on";
+  if (event.currentTarget.checked) {
+    ticked = "on";
   } else {
-   ticked = "off";
+    ticked = "off";
   }
-  });
+});
 
 var uuid = getUrlParameter('UUID');
 document.getElementById("UUIDinput").value = uuid;
 
 let form = document.getElementById("form");
-form.addEventListener("submit", event => {event.preventDefault();
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-    const tick = ticked;
-    const uuid = form.elements.UUIDinput.value;
-    const data = { name, email, tick, uuid };
-    ws.send(JSON.stringify(data));
-  });
+form.addEventListener("submit", event => {
+  event.preventDefault();
+
+  // User must first fill out the form before submission
+  const name = form.elements.name.value;
+  const email = form.elements.email.value;
+
+  if (name.trim() === '' || email.trim() === '') {
+    alert("Please fill out all required fields (Name and Email).");
+    return;
+  }
+
+  const tick = ticked;
+  const uuid = form.elements.UUIDinput.value;
+  const data = { name, email, tick, uuid };
+  ws.send(JSON.stringify(data));
+
+  // Redirect to confirm.html
+  window.location.href = "confirm.html";
+});
 
 ws.addEventListener('open', (event) => {
   console.log('Socket connection open');
@@ -61,11 +73,11 @@ ws.addEventListener('message', (message) => {
 });
 
 ws.addEventListener('error', (error) => {
-    console.error('Error in the connection', error);
-    alert('error connecting socket server', error);
+  console.error('Error in the connection', error);
+  alert('error connecting socket server', error);
 });
 
 ws.addEventListener('close', (event) => {
-    console.log('Socket connection closed');
-    alert('closing socket server');
+  console.log('Socket connection closed');
+  alert('closing socket server');
 });
