@@ -6,6 +6,8 @@ What's in this project?
 
 ← index.html: This is the main web page for the site. 
 
+← confirm.html: This is the page that the user us sent to after they click submit.
+
 ← style.css: CSS files for the main page
 
 ← script.js: js to send websockets
