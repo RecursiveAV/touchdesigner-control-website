@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <section class="section1">
+        <div class="container">
+            <img class="bg" src="KioskBackground.jpg" alt="Full Page Background Image">
+            <header class="header">
+                <h3>WANT TO SEE YOUR SELFIE?</h3>
+                <h3>FILL OUT THE FORM BELOW</h3>
+            </header>
+        
+            <div class="form-container">
+                <form id="form" onsubmit="sendEmail(); return false;">
+            
+                    <div class="form-name-email">
+                        <input type="email" placeholder="Email*" name="email" id="userEmail" class="input-box">
+                    </div>
+                    <input type="submit" class="action-button" value="SEE MY ACTION SHOTS">
+                </form>
+            </div>
+        </div>   
+    </section> 
+  </body> 
+
+  <script>
+    function sendEmail() {
+        const userEmail = document.getElementById('userEmail').value;
+        const ws = new WebSocket('wss://test-server-app.herokuapp.com:443');
+
+        ws.addEventListener('open', (event) => {
+            ws.send(JSON.stringify({ userEmail }));
+
+            window.location.href = "confirm.html";
+        });
+
+        ws.addEventListener('close', (event) => {
+            console.log('WebSocket Connection Closed');
+        });
+    }
+</script>
+
+</html>
