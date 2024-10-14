@@ -50,3 +50,7 @@ ws.addEventListener('close', (event) => {
     console.log('Socket connection closed');
     alert('Socket server closed');
 });
+
+ping_sneakeasy.addEventListener('click', (event) => {
+    document.getElementById('sneakeasy_status').value = "0";
+})

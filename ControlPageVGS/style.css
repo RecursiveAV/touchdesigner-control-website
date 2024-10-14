@@ -110,7 +110,8 @@ input, button {
 
 #powercycle_pc_1, #powercycle_pc_2 ,#powercycle_doors, #powercycle_login
 , #powercycle_door_1, #powercycle_door_2, #powercycle_door_3, #powercycle_login_1
-, #powercycle_login_2, #powercycle_login_3, #powercycle_sneakeasy {
+, #powercycle_login_2, #powercycle_login_3, #powercycle_sneakeasy, #powercycle_admin
+, #powercycle_entrance {
     background-color: rgb(202, 0, 0);
     color: white;
 }

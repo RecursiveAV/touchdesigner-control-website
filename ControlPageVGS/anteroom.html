@@ -15,6 +15,7 @@
             <li><a href="arcade.html">Arcade</a></li>
             <li><a href="anteroom.html" class="active"">Anteroom</a></li>
             <li><a href="sneakeasy.html">48 Club</a></li>
+            <li><a href="extras.html">Extras</a></li>
         </ul>
     </nav>
 
@@ -83,17 +84,18 @@
             <button id="powercycle_door_3">Power Cycle</button>
         </section>
     </main>
-    
+
     <script>
         // SEND PINGS EVERY 10 SECONDS
         let lastSignalTime = null;
         function sendPingData() {
-            ws.send(JSON.stringify({"VGS_ping_login1": "1"}));
-            ws.send(JSON.stringify({"VGS_ping_login2": "1"}));
-            ws.send(JSON.stringify({"VGS_ping_login3": "1"}));
-            ws.send(JSON.stringify({"VGS_ping_door1": "1"}));
-            ws.send(JSON.stringify({"VGS_ping_door2": "1"}));
-            ws.send(JSON.stringify({"VGS_ping_door3": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_login1": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_login2": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_login3": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_door1": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_door2": "1"}));
+            // ws.send(JSON.stringify({"VGS_ping_door3": "1"}));
+            ws.send(JSON.stringify({"VGS_ping": "1"}));
         }
 
         function autoPressButton() {
@@ -115,7 +117,7 @@
             sendPingData();
             lastSignalTime = Date.now();
         }
-        setInterval(autoPressButton, 10000); 
+        setInterval(autoPressButton, 5000); 
     </script>
 </body>
 </html>

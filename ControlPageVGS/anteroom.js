@@ -143,3 +143,29 @@ ws.addEventListener('close', (event) => {
     console.log('Socket connection closed');
     alert('Closing socket server');
 });
+
+ping_login_1.addEventListener('click', (event) => {
+    document.getElementById('login_1_status').value = "0";
+})
+
+ping_login_2.addEventListener('click', (event) => {
+    document.getElementById('login_2_status').value = "0";
+})
+
+ping_login_3.addEventListener('click', (event) => {
+    document.getElementById('login_3_status').value = "0";
+})
+
+ping_door_1.addEventListener('click', (event) => {
+    document.getElementById('door_1_status').value = "0";
+})
+
+ping_door_2.addEventListener('click', (event) => {
+    document.getElementById('door_2_status').value = "0";
+})
+
+ping_door_3.addEventListener('click', (event) => {
+    document.getElementById('door3_3_status').value = "0";
+})
+
+

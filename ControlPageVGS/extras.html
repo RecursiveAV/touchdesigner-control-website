@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>VEGAS | Extras</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="extras.js" defer></script>
+</head>
+
+<body>
+     <!-- Top Navigation Bar (Major Nav) -->
+    <nav class="top-nav navbar-major">
+        <ul>
+            <li><a href="arcade.html">Arcade</a></li>
+            <li><a href="anteroom.html">Anteroom</a></li>
+            <li><a href="sneakeasy.html">48 Club</a></li>
+            <li><a href="extras.html" class="active">Extras</a></li>
+        </ul>
+    </nav>
+
+    <!-- PCs Navigation Bar (Minor Nav) -->
+    <div class="navbar navbar-minor">
+        <a href="#admin">Admin</a>
+        <a href="#entrance">Entrance</a>
+    </div>
+    <main>
+        <!-- Admin Section -->
+        <section class="admin" id="admin">
+            <h2>Admin PC</h2>
+            <button id="reboot_admin">Reboot</button>
+            <button id="shutdown_admin">Shutdown</button>
+            <button id="powercycle_admin">Power Cycle</button>
+            <br><br>
+            <label for="admin_status">Admin Status</label>
+            <input type="text" id="admin_status" value="0" readonly>
+            <button id="ping_admin">Ping</button>
+        </section>
+
+        <!-- Entrance Section -->
+        <section class="entrance" id="entrance">
+            <h2>Entrance PC</h2>
+            <button id="reboot_entrance">Reboot</button>
+            <button id="shutdown_entrance">Shutdown</button>
+            <button id="powercycle_entrance">Power Cycle</button>
+            <br><br>
+            <label for="entrance_status">Entrance Status</label>
+            <input type="text" id="entrance_status" value="0" readonly>
+            <button id="ping_entrance">Ping</button>
+        </section>
+    </main>
+
+    <script>
+        // SEND PINGS EVERY 10 SECONDS
+        let lastSignalTime = null;
+        function sendPingData() {
+            // ws.send(JSON.stringify({"VGS_ping_Admin": "1"}));
+            ws.send(JSON.stringify({"VGS_ping": "1"}));
+        }
+
+        function autoPressButton() {
+            let ping_1 = document.getElementById('ping_admin');
+            let ping_2 = document.getElementById('ping_entrance');
+            ping_1.click();
+            ping_2.click();
+            sendPingData();
+            lastSignalTime = Date.now();
+        }
+        setInterval(autoPressButton, 5000); 
+    </script>
+</body>
+</html>

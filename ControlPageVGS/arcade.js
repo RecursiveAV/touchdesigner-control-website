@@ -187,4 +187,12 @@ ws.addEventListener('message', (message) => {
       console.log('Socket connection closed');
       alert('closing socket server');
   });
+
+ping_pc_1.addEventListener('click', (event) => {
+    document.getElementById('pc_1_status').value = "0";
+})
+
+ping_pc_2.addEventListener('click', (event) => {
+    document.getElementById('pc_2_status').value = "0";
+})
   
