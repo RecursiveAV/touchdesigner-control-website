@@ -23,6 +23,7 @@
     <div class="navbar navbar-minor">
         <a href="#admin">Admin</a>
         <a href="#entrance">Entrance</a>
+        <a href="#accessories">Accessories Wall</a>
     </div>
     <main>
         <!-- Admin Section -->
@@ -48,6 +49,18 @@
             <input type="text" id="entrance_status" value="0" readonly>
             <button id="ping_entrance">Ping</button>
         </section>
+
+        <!-- Accessories Wall Section -->
+        <section class="accessories" id="accessories">
+            <h2>Accessories Wall PC</h2>
+            <button id="reboot_accessories">Reboot</button>
+            <button id="shutdown_accessories">Shutdown</button>
+            <button id="powercycle_accessories">Power Cycle</button>
+            <br><br>
+            <label for="accessories_status">Accessories Wall Status</label>
+            <input type="text" id="accessories_status" value="0" readonly>
+            <button id="ping_accessories">Ping</button>
+        </section>
     </main>
 
     <script>
@@ -61,8 +74,10 @@
         function autoPressButton() {
             let ping_1 = document.getElementById('ping_admin');
             let ping_2 = document.getElementById('ping_entrance');
+            let ping_3 = document.getElementById('ping_accessories');
             ping_1.click();
             ping_2.click();
+            ping_3.click();
             sendPingData();
             lastSignalTime = Date.now();
         }

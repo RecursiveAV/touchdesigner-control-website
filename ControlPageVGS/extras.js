@@ -62,3 +62,7 @@ ping_admin.addEventListener('click', (event) => {
 ping_entrance.addEventListener('click', (event) => {
     document.getElementById('entrance_status').value = "0";
 })
+
+ping_accessories.addEventListener('click', (event) => {
+    document.getElementById('accessories_status').value = "0";
+})
