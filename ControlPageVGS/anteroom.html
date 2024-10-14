@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>VEGAS | Anteroom</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="anteroom.js" defer></script>
+</head>
+
+<body>
+     <!-- Top Navigation Bar (Major Nav) -->
+    <nav class="top-nav navbar-major">
+        <ul>
+            <li><a href="arcade.html">Arcade</a></li>
+            <li><a href="anteroom.html" class="active"">Anteroom</a></li>
+            <li><a href="sneakeasy.html">48 Club</a></li>
+        </ul>
+    </nav>
+
+    <!-- PCs Navigation Bar (Minor Nav) -->
+    <div class="navbar navbar-minor">
+        <a href="#login_machines">Login Machines</a>
+        <a href="#false_doors">False Doors</a>
+    </div>
+
+    <main>
+        <!-- Login Machines Section -->
+        <section class="login_machines" id="login_machines">
+            <h2>Login Machines</h2>
+            <button id="reboot_login">Reboot All</button>
+            <button id="shutdown_login">Shutdown All</button>
+            <button id="powercycle_login">Power Cycle All</button>
+            <br><br>
+            <label for="login_1_status">Login 01 Status</label>
+            <input type="text" id="login_1_status" value="0" readonly>
+            <button id="ping_login_1">Ping</button>
+            <button id="reset_login_1">Reboot</button>
+            <button id="shutdown_login_1">Shutdown</button>
+            <button id="powercycle_login_1">Power Cycle</button>
+            <br><br>
+            <label for="login_2_status">Login 02 Status</label>
+            <input type="text" id="login_2_status" value="0" readonly>
+            <button id="ping_login_2">Ping</button>
+            <button id="reset_login_2">Reboot</button>
+            <button id="shutdown_login_2">Shutdown</button>
+            <button id="powercycle_login_2">Power Cycle</button>
+            <br><br>
+            <label for="login_3_status">Login 03 Status</label>
+            <input type="text" id="login_3_status" value="0" readonly>
+            <button id="ping_login_3">Ping</button>
+            <button id="reset_login_3">Reboot</button>
+            <button id="shutdown_login_3">Shutdown</button>
+            <button id="powercycle_login_3">Power Cycle</button>
+        </section>
+
+        <!-- False Doors Section -->
+        <section class="false_doors" id="false_doors">
+            <h2>False Doors</h2>
+            <button id="reboot_doors">Reboot All</button>
+            <button id="shutdown_doors">Shutdown All</button>
+            <button id="powercycle_doors">Power Cycle All</button>
+            <br><br>
+            <label for="door_1_status">Door 01 Status</label>
+            <input type="text" id="door_1_status" value="0" readonly>
+            <button id="ping_door_1">Ping</button>
+            <button id="reset_door_1">Reboot</button>
+            <button id="shutdown_door_1">Shutdown</button>
+            <button id="powercycle_door_1">Power Cycle</button>
+            <br><br>
+            <label for="door_2_status">Door 02 Status</label>
+            <input type="text" id="door_2_status" value="0" readonly>
+            <button id="ping_door_2">Ping</button>
+            <button id="reset_door_2">Reboot</button>
+            <button id="shutdown_door_2">Shutdown</button>
+            <button id="powercycle_door_2">Power Cycle</button>
+            <br><br>
+            <label for="door_3_status">Door 03 Status</label>
+            <input type="text" id="door_3_status" value="0" readonly>
+            <button id="ping_door_3">Ping</button>
+            <button id="reset_door_3">Reboot</button>
+            <button id="shutdown_door_3">Shutdown</button>
+            <button id="powercycle_door_3">Power Cycle</button>
+        </section>
+    </main>
+    
+    <script>
+        // SEND PINGS EVERY 10 SECONDS
+        let lastSignalTime = null;
+        function sendPingData() {
+            ws.send(JSON.stringify({"VGS_ping_login1": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_login2": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_login3": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_door1": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_door2": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_door3": "1"}));
+        }
+
+        function autoPressButton() {
+            let ping_1 = document.getElementById('ping_login_1');
+            let ping_2 = document.getElementById('ping_login_2');
+            let ping_3= document.getElementById('ping_login_3');
+
+            let ping_4 = document.getElementById('ping_door_1');
+            let ping_5 = document.getElementById('ping_door_2');
+            let ping_6 = document.getElementById('ping_door_3');
+
+            ping_1.click();
+            ping_2.click();
+            ping_3.click();
+            ping_4.click();
+            ping_5.click();
+            ping_6.click();
+
+            sendPingData();
+            lastSignalTime = Date.now();
+        }
+        setInterval(autoPressButton, 10000); 
+    </script>
+</body>
+</html>

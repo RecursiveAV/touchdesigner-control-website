@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>VEGAS | 48 Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="sneakeasy.js" defer></script>
+</head>
+
+<body>
+     <!-- Top Navigation Bar (Major Nav) -->
+    <nav class="top-nav navbar-major">
+        <ul>
+            <li><a href="arcade.html">Arcade</a></li>
+            <li><a href="anteroom.html">Anteroom</a></li>
+            <li><a href="sneakeasy.html" class="active">48 Club</a></li>
+        </ul>
+    </nav>
+
+    <!-- PCs Navigation Bar (Minor Nav) -->
+    <!-- <div class="navbar navbar-minor">
+        <a href="#login_machines">Login Machines</a>
+        <a href="#false_doors">False Doors</a>
+    </div> -->
+    <main>
+        <!-- Sneakeasy Section -->
+        <section class="sneakeasy" id="sneakeasy">
+            <h2>48 Club</h2>
+            <button id="reboot_sneakeasy">Reboot</button>
+            <button id="shutdown_sneakeasy">Shutdown</button>
+            <button id="powercycle_sneakeasy">Power Cycle</button>
+            <br><br>
+            <label for="sneakeasy_status">48 Club Status</label>
+            <input type="text" id="sneakeasy_status" value="0" readonly>
+            <button id="ping_sneakeasy">Ping</button>
+        </section>
+    </main>
+
+    <script>
+        // SEND PINGS EVERY 10 SECONDS
+        let lastSignalTime = null;
+        function sendPingData() {
+            ws.send(JSON.stringify({"VGS_ping_Sneakeasy": "1"}));
+        }
+
+        function autoPressButton() {
+            let ping_1 = document.getElementById('ping_sneakeasy');
+            ping_1.click();
+            sendPingData();
+            lastSignalTime = Date.now();
+        }
+        setInterval(autoPressButton, 10000); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>VEGAS | Arcade Room</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="arcade.js" defer></script>
+</head>
+
+<body>
+    <!-- Top Navigation Bar (Major Nav) -->
+    <nav class="top-nav navbar-major">
+        <ul>
+            <li><a href="arcade.html" class="active">Arcade</a></li>
+            <li><a href="anteroom.html">Anteroom</a></li>
+            <li><a href="sneakeasy.html">48 Club</a></li>
+        </ul>
+    </nav>
+
+    <!-- PCs Navigation Bar (Minor Nav) -->
+    <div class="navbar navbar-minor">
+        <a href="#td_brain">TD Brain</a>
+        <a href="#unreal">Unreal</a>
+    </div>
+
+    <main>
+        <!-- TD Brain Section -->
+        <section class="td_brain" id="td_brain">
+            <h2>TD Brain</h2>
+            <button id="reboot_pc_1">Reboot PC</button>
+            <button id="shutdown_pc_1">Shutdown PC</button>
+            <button id="powercycle_pc_1">Power Cycle</button>
+            <br><br>
+            <label for="pc_1_status" id="status_1">PC Status</label>
+            <input type="text" id="pc_1_status" value="0" readonly>
+            <button id="ping_pc_1">Ping</button>
+            <br><br>
+            <label for="camera_1_status">ENTRANCE Orbbec</label>
+            <input type="text" id="camera_1_status" value="0" readonly>
+            <button id="restart_cam_1">Reset</button>
+            <br><br>
+            <label for="camera_2_status">SCREEN Orbbec</label>
+            <input type="text" id="camera_2_status" value="0" readonly>
+            <button id="restart_cam_2">Reset</button>
+            <br><br>
+            <label for="camera_3_status">DOWN Orbbec</label>
+            <input type="text" id="camera_3_status" value="0" readonly>
+            <button id="restart_cam_3">Reset</button>
+            <br><br>
+            <label for="camera_4_status">SIDE CAM 01</label>
+            <input type="text" id="camera_4_status" value="0" readonly>
+            <button id="restart_cam_4">Reset</button>
+            <br><br>
+            <label for="camera_5_status">SIDE CAM 02</label>
+            <input type="text" id="camera_5_status" value="0" readonly>
+            <button id="restart_cam_5">Reset</button>
+            <br><br><br>
+
+            <h4>Start Games</h4>
+            <button id="unload_game">Unload Game</button>
+            <button id="cal_floor">Calibrate Floor</button>
+            <br><br>
+            <label for="goal_loaded">GOAL</label>
+            <input type="text" id="goal_loaded" value="0" readonly>
+            <button id="start_game_goal">Load</button>
+            <br><br>
+            <label for="drive_loaded">DRIVE</label>
+            <input type="text" id="drive_loaded" value="0" readonly>
+            <button id="start_game_drive">Load</button>
+            <br><br>
+            <label for="run_loaded">RUN</label>
+            <input type="text" id="run_loaded" value="0" readonly>
+            <button id="start_game_run">Load</button>
+        </section>
+    </main>
+
+    <!-- Unreal Section -->
+    <section class="unreal" id="unreal">
+        <h2>Unreal PC</h2>
+        <button id="reboot_pc_2">Reboot PC</button>
+        <button id="shutdown_pc_2">Shutdown PC</button>
+        <button id="powercycle_pc_2">Power Cycle</button>
+        <br><br>
+        <label for="pc_2_status">PC Status</label>
+        <input type="text" id="pc_2_status" value="0" readonly>
+        <button id="ping_pc_2">Ping</button>
+        <br>
+        <!-- <label for="active_game">Current Game</label>
+        <input type="text" id="active_game" value="None" readonly> -->
+    </section>
+
+    <script>
+        // SEND PINGS EVERY 10 SECONDS
+        let lastSignalTime = null;
+        function sendPingData() {
+            ws.send(JSON.stringify({"VGS_ping_TD": "1"}));
+            ws.send(JSON.stringify({"VGS_ping_UE": "1"}));
+        }
+
+        function autoPressButton() {
+            let ping_1 = document.getElementById('ping_pc_1');
+            let ping_2 = document.getElementById('ping_pc_2');
+            ping_1.click();
+            ping_2.click();
+            sendPingData();
+            lastSignalTime = Date.now();
+        }
+        setInterval(autoPressButton, 10000); 
+    </script>
+</body>
+</html>

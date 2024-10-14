@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    margin-top: 120px; /* Adjust for the space occupied by the fixed navbars */
+}
+
+/* Major Navbar (Top Navigation) Styling */
+.navbar-major {
+    background-color: #333;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-major ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.navbar-major li {
+    display: inline;
+}
+
+.navbar-major a {
+    display: inline-block;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.navbar-major a.active {
+    background-color: #4CAF50; /* Highlight active page */
+    color: white;
+}
+
+.navbar-major a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Minor Navbar (PCs Navigation) Styling */
+.navbar-minor {
+    background-color: #333;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 60px; /* Position below the major navbar */
+    left: 0;
+    z-index: 99;
+}
+
+.navbar-minor a {
+    display: inline-block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-minor a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Section Styling */
+main {
+    display: flex; /* Use flexbox to arrange sections */
+    flex-wrap: wrap; /* Allow sections to wrap */
+    justify-content: center; /* Center align sections */
+    width: 100%; /* Full width for sections */
+}
+
+section {
+    border: 1px solid #5372ef;
+    padding: 20px;
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, and base width of 300px */
+    max-width: 90%; /* Limit max width */
+    text-align: center;
+    margin: 10px; /* Reduced margin for a more compact layout */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    margin-top: 20px; /* Reduced margin to avoid overlap with fixed navbars */
+}
+
+h2, h4 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+}
+
+input, button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+#powercycle_pc_1, #powercycle_pc_2 ,#powercycle_doors, #powercycle_login
+, #powercycle_door_1, #powercycle_door_2, #powercycle_door_3, #powercycle_login_1
+, #powercycle_login_2, #powercycle_login_3, #powercycle_sneakeasy {
+    background-color: rgb(202, 0, 0);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 10px;
+        font-size: 14px;
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
