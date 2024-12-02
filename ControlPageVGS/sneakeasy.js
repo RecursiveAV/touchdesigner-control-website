@@ -17,6 +17,11 @@ powerCycleButton.addEventListener('click', () => {
     ws.send(JSON.stringify({"VGS_powercycle_sneakeasy": "1"}));
 });
 
+let reset_door = document.getElementById('reset_door_sneakeasy');
+reset_door.addEventListener('click', () => {
+    ws.send(JSON.stringify({"VGS_reset_sneakeasy": "1"}));
+});
+
 // WEBSOCKET OPEN/CLOSE/ERROR HANDLING
 ws.addEventListener('open', (event) => {
     console.log('Socket connection open');
