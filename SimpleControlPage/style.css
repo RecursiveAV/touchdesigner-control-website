@@ -32,6 +32,10 @@ body {
     background-color: #6666ff;
     color: white;
 }
+.restart {
+    background-color: #f066ff;
+    color: white;
+}
 .locked {
     cursor: not-allowed;
     opacity: 0.6;

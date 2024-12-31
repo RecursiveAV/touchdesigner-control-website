@@ -43,6 +43,22 @@ let ws = new WebSocket('wss://test-server-app.herokuapp.com:443');
                     }, 5000);
                 }
             }
+
+            if (data["LVBD_Confirmed_Restart"] === "1") {
+                const button = document.querySelector('.restart');
+                if (button) {
+                    button.style.backgroundColor = '#3de83a'; // Turn green
+                    button.classList.add('locked'); // Lock the button
+                    button.disabled = true; // Disable further clicks
+
+                    // Revert after 5 seconds
+                    setTimeout(() => {
+                        button.style.backgroundColor = '';
+                        button.classList.remove('locked');
+                        button.disabled = false;
+                    }, 5000);
+                }
+            }
         };
 
         function sendCommand(command, buttonClass) {
