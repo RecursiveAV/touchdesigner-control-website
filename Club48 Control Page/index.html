@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="eg">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>VEGAS | Control</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <button class="button door" onclick="sendCommand('LVBD_48_Door', 'door')">Reset Door</button>
+        <button class="button vault" onclick="sendCommand('LVBD_48_Vault', 'vault')">Reset Vault</button>
+        <button class="button wall" onclick="sendCommand('LVBD_48_BackWall', 'wall')">Reset Back Wall</button>
+    </body>
+</html>
