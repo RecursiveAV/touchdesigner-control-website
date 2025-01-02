@@ -25,15 +25,15 @@ body {
     transform: scale(0.95);
 }
 .door {
-    background-color: #ff6666;
+    background-color: #6966ff;
     color: white;
 }
 .vault {
-    background-color: #6666ff;
+    background-color: #d666ff;
     color: white;
 }
 .wall {
-    background-color: #f066ff;
+    background-color: #66d4ff;
     color: white;
 }
 .locked {
